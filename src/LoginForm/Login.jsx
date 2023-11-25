@@ -6,27 +6,24 @@ import Box from "@mui/material/Box";
 import "../LoginForm/Login.css";
 import Grid from "@mui/material/Grid";
 import { useNavigate } from "react-router-dom";
+
 function LoginForm() {
-  const {
-    userName,
-    setUserName,
-    userPassword,
-    setUserPassword,
-    errorMessage,
-    setErrorMesssage,
-  } = useContext(Context);
-  const formFilder=useNavigate()
-  function handleLogin() {
+  const navigate=useNavigate();
+  const { userName, setUserName, userPassword, setUserPassword } =
+    useContext(Context);
+
+  function handleLogin(event) {
     const validUsername = "Nagarajthanagaraj";
     const validPassword = "1234";
     if (userName === validUsername && userPassword === validPassword) {
-        
-      formFilder('')
-    
-
-    } else {
-
-      alert("userName or password incorrect")
+      event.preventDefault();
+    navigate("tableForm");
+    } 
+    else if(userName==="" && userPassword ==="" ){
+      alert("Please fill the form")
+    }
+    else {
+      alert("userName or password incorrect");
     }
   }
   return (
@@ -95,8 +92,21 @@ function LoginForm() {
                   onSubmit={(e) => handleLogin(e)}
                   className="form"
                 >
-                  <h3 style={{position:"relative",top:30, right:60}}> Welcome back to</h3>
-                  <h2 style={{position:"relative",right:100,fontSize:25,fontFamily:"sans-serif"}}> Login! </h2>
+                  <h3 style={{ position: "relative", top: 30, right: 60 }}>
+                    {" "}
+                    Welcome back to
+                  </h3>
+                  <h2
+                    style={{
+                      position: "relative",
+                      right: 100,
+                      fontSize: 25,
+                      fontFamily: "sans-serif",
+                    }}
+                  >
+                    {" "}
+                    Login!{" "}
+                  </h2>
                   <TextField
                     id="outlined-basic"
                     label="User Name"
@@ -123,9 +133,7 @@ function LoginForm() {
                   >
                     LOGIN
                   </Button>
-                  <span className="account">
-                    Dont have an account
-                  </span>
+                  <span className="account">Dont have an account</span>
                   <a href="#" className="link2">
                     Register
                   </a>
