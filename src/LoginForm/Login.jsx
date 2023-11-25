@@ -134,9 +134,7 @@ function LoginForm() {
                     LOGIN
                   </Button>
                   <span className="account">Dont have an account</span>
-                  <a href="#" className="link2">
-                    Register
-                  </a>
+                  <a href="#" className="link2"> Register </a>
                 </form>
               </div>
             </div>

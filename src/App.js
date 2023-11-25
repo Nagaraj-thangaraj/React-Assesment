@@ -8,6 +8,7 @@ function App() {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [errorMessage, setErrorMesssage] = useState("");
+  const [apiData,setApiData]=useState([])
   return (
     <Context.Provider
       value={{
@@ -17,6 +18,8 @@ function App() {
         setUserPassword,
         errorMessage,
         setErrorMesssage,
+        apiData,
+        setApiData
       }}
     >
       <div className="App">
