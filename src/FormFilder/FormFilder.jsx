@@ -3,6 +3,7 @@ import { Context } from "../Context/Context";
 import Navigation from "./NavigationBar/Navigation";
 import { Box, Grid ,TableCell,TableBody,TableRow,TableContainer,Paper,Table,TableHead} from "@mui/material";
 import { IOSSwitch } from "./IosSwitch";
+import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 
 
 export default function FormFilder() {
@@ -104,7 +105,7 @@ export default function FormFilder() {
               </TableCell>
               <TableCell align="right">{row.formName}</TableCell>
               <TableCell align="right">{row.date}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="right"> <EditCalendarIcon/> </TableCell>
               <TableCell align="right">{row.protein}</TableCell>
             </TableRow>
           ))}
