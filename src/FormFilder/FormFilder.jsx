@@ -1,7 +1,10 @@
 import React, { useState,useEffect,useContext } from "react";
 import { Context } from "../Context/Context";
 import Navigation from "./NavigationBar/Navigation";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid ,TableCell,TableBody,TableRow,TableContainer,Paper,Table,TableHead} from "@mui/material";
+import { IOSSwitch } from "./IosSwitch";
+
+
 export default function FormFilder() {
   const {apiData,setApiData} =
   useContext(Context);
@@ -78,7 +81,37 @@ export default function FormFilder() {
               id="image"
             />
           </Grid>
-          <Grid xs={6}></Grid>
+          <Grid xs={6}>
+          <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Status</TableCell>
+            <TableCell align="right">Form Name</TableCell>
+            <TableCell align="right">Created Date</TableCell>
+            <TableCell align="right">Action</TableCell>
+            
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {apiData.map((row) => (
+            <TableRow
+              key={row.id}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+              <IOSSwitch/>
+              </TableCell>
+              <TableCell align="right">{row.formName}</TableCell>
+              <TableCell align="right">{row.date}</TableCell>
+              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="right">{row.protein}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+          </Grid>
         </Grid>
       </Box>
     </div>

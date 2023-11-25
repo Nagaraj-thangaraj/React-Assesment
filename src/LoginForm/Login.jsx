@@ -12,7 +12,7 @@ function LoginForm() {
   const { userName, setUserName, userPassword, setUserPassword } =
     useContext(Context);
 
-  function handleLogin(event) {
+  function handleLogin(event) { 
     const validUsername = "Nagarajthanagaraj";
     const validPassword = "1234";
     if (userName === validUsername && userPassword === validPassword) {
@@ -134,7 +134,9 @@ function LoginForm() {
                     LOGIN
                   </Button>
                   <span className="account">Dont have an account</span>
-                  <a href="#" className="link2"> Register </a>
+                  <a href="#" className="link2">
+                    Register
+                  </a>
                 </form>
               </div>
             </div>
