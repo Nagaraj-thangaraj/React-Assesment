@@ -12,9 +12,11 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { useNavigate } from 'react-router-dom';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+const pages = [];
+const settings = ['Logout'];
 function Navigation() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -32,10 +34,13 @@ function Navigation() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+    Home("/")
+
   };
+  const Home=useNavigate()
   return (
     <div>
-<AppBar position="static">
+<AppBar position="fixed" sx={{top:0}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
