@@ -8,6 +8,7 @@ function App() {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [apiData, setApiData] = useState([]);
+  const [error,setError]=useStatue([])
   return (
     <Context.Provider
       value={{
